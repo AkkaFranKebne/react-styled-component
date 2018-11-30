@@ -7,6 +7,7 @@ class App extends Component {
     return (
       <div className="App">
         <Button>Basic Button</Button>
+        <Button danger>Danger Button</Button>
       </div>
     );
   }
