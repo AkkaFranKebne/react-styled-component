@@ -3,10 +3,10 @@ import styled, { css } from 'styled-components';
 
 // styling added to Button element directly
 const Button = styled.button`
-  background: white;
-  border: 5px solid black;
+  background: ${props => props.theme.backgroundColor};
+  border: 1px solid ${props => props.theme.primaryColor};
   font-size: 20px;
-  color: blue;
+  color: ${props => props.theme.primaryColor};
 
   ${props =>
     // if props.danger exists do some css  (done instead of specific class, like btn-danger)
