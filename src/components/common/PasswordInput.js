@@ -3,7 +3,7 @@ import styled from 'styled-components';
 
 // passing attributes to components
 const PasswordInput = styled.input.attrs({
-  type: 'password'
+  type: props => (props.showPassword ? 'text' : 'password')
 })`
   border-radius: 3px;
   outline: none;

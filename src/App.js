@@ -8,11 +8,17 @@ import './App.css';
 
 class App extends Component {
   state = {
-    theme: LightTheme
+    theme: LightTheme,
+    showPassword: false
   };
   handleToggleTheme = () => {
     this.setState({
       theme: this.state.theme.id === 'light' ? DarkTheme : LightTheme
+    });
+  };
+  handleToggleShowPass = () => {
+    this.setState({
+      showPassword: !this.state.showPassword
     });
   };
   render() {
@@ -28,9 +34,12 @@ class App extends Component {
           <Button>dark theme</Button>
         </ThemeProvider>
         <ThemeProvider theme={this.state.theme}>
-          <Button onClick={this.handleToggleTheme}>toggle theme</Button>
+          <section>
+            <Button onClick={this.handleToggleTheme}>toggle theme</Button>
+            <PasswordInput showPassword={this.state.showPassword} />
+            <Button onClick={this.handleToggleShowPass}>{this.state.showPassword ? 'hide pass' : 'show pass'}</Button>
+          </section>
         </ThemeProvider>
-        <PasswordInput />
       </div>
     );
   }
