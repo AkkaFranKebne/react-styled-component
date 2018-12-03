@@ -1,10 +1,12 @@
 import React, { Component } from 'react';
 import { ThemeProvider } from 'styled-components';
-import Button from './components/common/Button';
+import ButtonStyled from './components/common/Button';
+import PrimaryBootstrapButton from './components/common/PrimaryBootstrapButton';
 import PasswordInput from './components/common/PasswordInput';
 import LightTheme from './theme/light';
 import DarkTheme from './theme/dark';
 import './App.css';
+import { Button } from 'reactstrap';
 
 class App extends Component {
   state = {
@@ -25,19 +27,21 @@ class App extends Component {
     return (
       <div className="App">
         <ThemeProvider theme={LightTheme}>
-          <Button danger>Danger Button</Button>
+          <ButtonStyled danger>Danger Button</ButtonStyled>
         </ThemeProvider>
         <ThemeProvider theme={LightTheme}>
-          <Button>light theme</Button>
+          <ButtonStyled>light theme</ButtonStyled>
         </ThemeProvider>
         <ThemeProvider theme={DarkTheme}>
-          <Button>dark theme</Button>
+          <ButtonStyled>dark theme</ButtonStyled>
         </ThemeProvider>
         <ThemeProvider theme={this.state.theme}>
           <section>
-            <Button onClick={this.handleToggleTheme}>toggle theme</Button>
+            <ButtonStyled onClick={this.handleToggleTheme}>toggle theme</ButtonStyled>
             <PasswordInput showPassword={this.state.showPassword} />
-            <Button onClick={this.handleToggleShowPass}>{this.state.showPassword ? 'hide pass' : 'show pass'}</Button>
+            <ButtonStyled onClick={this.handleToggleShowPass}>{this.state.showPassword ? 'hide pass' : 'show pass'}</ButtonStyled>
+            <Button color="primary">Primary Bootstrap Button</Button>
+            <PrimaryBootstrapButton>Primary Bootstrap Button Modified</PrimaryBootstrapButton>
           </section>
         </ThemeProvider>
       </div>
