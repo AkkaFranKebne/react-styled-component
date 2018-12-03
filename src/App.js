@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { ThemeProvider } from 'styled-components';
 import Button from './components/common/Button';
+import PasswordInput from './components/common/PasswordInput';
 import LightTheme from './theme/light';
 import DarkTheme from './theme/dark';
 import './App.css';
@@ -29,6 +30,7 @@ class App extends Component {
         <ThemeProvider theme={this.state.theme}>
           <Button onClick={this.handleToggleTheme}>toggle theme</Button>
         </ThemeProvider>
+        <PasswordInput />
       </div>
     );
   }
